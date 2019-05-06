@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=1024"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Las claves para servir WordPress rápido | by Joan Vega @wetopi.com</title>
+
+    <meta name="author" content="Joan Vega"/>
+
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic"
+          rel="stylesheet"/>
+
+    <!--
+
+        Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
+        presentation to work.
+
+        This style below contains styles only for demo presentation. Browse it to see how impress.js
+        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
+        you to use them directly in your presentation.
+
+        Be creative, build your own. We don't really want all impress.js presentations to look the same,
+        do we?
+
+        When creating your own presentation get rid of this file. Start from scratch, it's fun!
+
+    -->
+    <link href="fonts/fonts.css" rel="stylesheet"/>
+    <link href="css/wetopi.css" rel="stylesheet"/>
+
+    <link rel="shortcut icon" href="favicon.png"/>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+</head>
+
+<!--
+
+    Body element is used by impress.js to set some useful class names, that will allow you to detect
+    the support and state of the presentation in CSS or other scripts.
+
+    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
+    support features required by impress.js, so you should apply some fallback styles in your CSS.
+    It's not necessary to add it manually on this element. If the script detects that browser is not
+    good enough it will add this class, but keeping it in HTML means that users without JavaScript
+    will also get fallback styles.
+
+    When impress.js script detects that browser supports all required features, this class name will
+    be removed.
+
+    The class name on body element also depends on currently active presentation step. More details about
+    it can be found later, when `hint` element is being described.
+
+-->
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser
+        <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.
+    </p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!--
+
+    Now that's the core element used by impress.js.
+
+    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
+    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
+
+    You probably won't need it now, but there are some configuration options that can be set on this element.
+
+    To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
+    a number of ms. It defaults to 1000 (1s).
+
+    You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
+    It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
+    If you are willing to change this value make sure you understand how CSS perspective works:
+    https://developer.mozilla.org/en/CSS/perspective
+
+    But as I said, you won't need it for now, so don't worry - there are some simple but interesting things
+    right around the corner of this tag ;)
+
+    ----------
+    Plugins: We set the default time for autoplay plugin to 6 seconds. Autoplay will automatically advance
+    to next slide after a timeout expires.
+
+-->
+<div id="impress">
+
+    <!--
+
+        Here is where interesting thing start to happen.
+
+        Each step of the presentation should be an element inside the `#impress` with a class name
+        of `step`. These step elements are positioned, rotated and scaled by impress.js, and
+        the 'camera' shows them on each step of the presentation.
+
+        Positioning information is passed through data attributes.
+
+        In the example below we only specify x and y position of the step element with `data-x="-1000"`
+        and `data-y="-1500"` attributes. This means that **the center** of the element (yes, the center)
+        will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'.
+
+        It will not be rotated or scaled.
+
+        --------
+        Plugins: For first slide, set the autoplay time to a custom 10 seconds.
+
+    -->
+    <div id="lets-talk" class="step slide" data-x="-2700" data-y="-1500">
+        <p>Hablamos de ...</p>
+         <h3>Las claves para <strong>servir</strong>
+        WordPress
+        <strong>Rápido</strong>
+    </h3>
+    </div>
+
+    <!--
+
+        The `id` attribute of the step element is used to identify it in the URL, but it's optional.
+        If it is not defined, it will get a default value of `step-N` where N is a number of slide.
+
+        So in the example below it'll be `step-2`.
+
+        The hash part of the url when this step is active will be `#/step-2`.
+
+        You can also use `#step-2` in a link, to point directly to this particular step.
+
+        Please note, that while `#/step-2` (with slash) would also work in a link it's not recommended.
+        Using classic `id`-based links like `#step-2` makes these links usable also in fallback mode.
+
+    -->
+    <div id="who-am-i" class="step slide" data-x="-1700" data-y="-1500">
+
+        <h2>mhh.. Joan Vega</h2>
+        <p><strong>< 2015</strong><br>
+            full stack web developer<br>
+            <i>
+                <small>(alojamiento en dedicados)</small>
+                <br></i>
+            <br>
+        </p>
+        <p><strong>> 2015</strong>
+            developer + fundador wetopi <br>
+            <i>
+                <small>(alojamiento especializado WordPress)</small>
+            </i>
+        </p>
+
+    </div>
+
+
+    <div id="trabajamos-en-dos-frentes" class="step" data-x="-700" data-y="-1480" data-z="400" data-rotate-z="-90" data-scale="1">
+        <h2>Trabajamos en dos frentes:</h2>
+        <p><strong>servir contenido</strong><br>
+            backend (hosting)</p>
+        <p><strong>pintar contenido</strong><br>
+            frontend (browser)</p>
+    </div>
+
+
+
+    <div id="servir-contenido-etapas" class="step" data-x="-1100" data-y="-700" data-z="0">
+
+        <h2>Servir contenido</h2>
+        <h3>Etapas</h3>
+        <p>
+            1.- Descubrir el servidor<br>
+            2.- Abrir diálogo<br>
+            3.- Negociar conexión segura<br>
+            4.- Verificar validez certificado<br>
+            5.- Obtener datos<br>
+            6.- Enviar datos
+        </p>
+    </div>
+
+
+
+    <div id="servir-contenido-descubrir-servidor"                       class="step" data-x="-2000" data-y="-500" data-z="800">
+
+        <h2 class="breadcrumb">Servir contenido →</h2>
+        <h3>1.- Descubrir el servidor</h3>
+        <p>
+            DNS Lookup
+        </p>
+    </div>
+    <div id="servir-contenido-descubrir-servidor-clave-dns"             class="step" data-x="-3000" data-y="-500" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Descubrir el servidor</h2>
+        <h3>Las claves:</h3>
+        <p>1. un DNS anycast</p>
+        <img src="images/dns-anycast.svg" width="1200" style="margin:-50px 0 0 -200px;">
+    </div>
+    <div id="servir-contenido-descubrir-servidor-clave-dns-recomendado" class="step" data-x="-3800" data-y="-500" data-z="1000" data-rotate-y="75">
+        <h2 class="breadcrumb">Servir contenido → Descubrir servidor → un DNS anycast</h2>
+        <h3>Recomendables:</h3>
+        <p>
+            <a href="https://cloudflare.com">Cloudflare</a> (free) 36%<br>
+            <a href="https://dnsmadeeasy.com/">Dnsmadeeasy</a> (~3$/a)<br>
+            <a href="https://www.mrdomain.com/products/services/dns-anycast/">Dondominio</a> (free*)<br>
+            <a href="https://aws.amazon.com/es/route53/">AWS Route53</a> (>1$/m) 30%<br>
+        </p>
+    </div>
+    <div id="servir-contenido-descubrir-servidor-clave-dns-prefetch"    class="step" data-x="-3000" data-y="300" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Descubrir servidor (recursos externos)</h2>
+        <h3>Las claves</h3>
+        <p>2. DNS-prefetch
+            <small>(para llamadas a otros dominios)</small>
+        </p>
+        <pre><code>
+    &lt;head&gt;
+       ...
+       &lt;link rel=&quot;dns-prefetch&quot; href=&quot;https://my.cdn.com&quot; /&gt;
+       &lt;link rel=&quot;dns-prefetch&quot; href=&quot;https://api.my-app.com&quot; /&gt;
+    &lt;/head&gt;
+        </code></pre>
+        <p>
+            <small>más info: <a href="https://3perf.com/blog/link-rels/">https://3perf.com/blog/link-rels/</a></small>
+        </p>
+    </div>
+
+
+
+    <div id="servir-contenido-abrir-conexion"                           class="step" data-x="-2000" data-y="1000" data-z="800">
+
+        <h2 class="breadcrumb">Servir contenido</h2>
+        <h3>2. Abrir conexión</h3>
+        <p>
+            Antes de enviar nada es necesario
+            establecer una conexión TCP<br>
+            <br>
+            El gran problema la latencia:<br>
+            <small>El tiempo que ocurre entre que envías una petición hasta que recibes el primer bit de respuesta.</small>
+        </p>
+    </div>
+    <div id="servir-contenido-abrir-conexion-clave-http2"               class="step" data-x="-3000" data-y="1000" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Abrir conexión</h2>
+        <h3>Las claves</h3>
+        <p>Buena latencia</p>
+        <p>Servidor con protocolos HTTP/2<br>
+            <small>compresión, multiplexing, contenido en binario, ...</small>
+        </p>
+    </div>
+    <div id="servir-contenido-abrir-conexion-clave-http2-demo"          class="step" data-x="-3900" data-y="1000" data-z="800">
+        <p><a href="https://http2.akamai.com/demo" target="_blank"><img src="images/http1_vs_http2.png" width="747" height="624"><br>
+        <small>https://http2.akamai.com/demo</small></a></p>
+    </div>
+
+
+
+    <div id="servir-contenido-negociar-conexion-segura"                 class="step" data-x="-2000" data-y="1900" data-z="800">
+
+        <h2 class="breadcrumb">Servir contenido</h2>
+        <h3>3. Negociar conexión segura</h3>
+        <p>Tiene un peso importante durante la conexión</p>
+    </div>
+    <div id="servir-contenido-negociar-conexion-segura-problema"        class="step" data-x="-3200" data-y="1900" data-z="800">
+        <img src="images/ejemplo_http_11.png" width="854" style="margin:0 0 0 -200px;">
+    </div>
+    <div id="servir-contenido-negociar-conexion-segura-clave-tls13"     class="step" data-x="-3200" data-y="2600" data-z="800">
+        <h2 class="breadcrumb">Servir contenido -> Negociar conexión segura</h2>
+        <h3>Las claves:</h3>
+        <p>
+            <strong>TLS 1.3</strong> <small>(<a href="https://es.wikipedia.org/wiki/Grupo_de_Trabajo_de_Ingenier%C3%ADa_de_Internet" target="_blank">IETF</a> <a href="https://datatracker.ietf.org/doc/rfc8446/">Agosto 2018</a>)</small><br>
+            <small>Negocia en 1 RTT + Seguridad + Zero-RTT</small>
+        </p>
+    </div>
+    <div id="servir-contenido-negociar-conexion-segura-tls12_vs_13"     class="step" data-x="-4600" data-y="2600" data-z="800">
+        <img src="images/tls_12_vs_13.png" width="1200" height="522"    style="margin:-20px -200px;">
+    </div>
+    <div id="servir-contenido-negociar-conexion-segura-tls_version"     class="step" data-x="-4600" data-y="3300" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Negociar conexión segura</h2>
+        <h3>Comprobar:</h3>
+        <p>
+            Chrome developer tools → Pestaña Seguridad
+        </p>
+    </div>
+    <div id="servir-contenido-negociar-conexion-segura-clave-http3"     class="step" data-x="-3200" data-y="3400" data-z="800">
+        <h2 class="breadcrumb">Servir contenido -> Negociar conexión segura</h2>
+        <h3>Novedades al caer:</h3>
+        <p>
+            <small>HTTP/2 se ve limitado por TCP en redes congestionadas</small>
+        </p>
+        <p>
+            Google <strong>Quic</strong>
+            <br>
+            Combina lo bueno de UDP y TLS1.3<br>
+            <small>Casi listo estandar IETF (finales de 2019)</small>
+            le llamaran <strong>HTTP/3</strong>
+        </p>
+    </div>
+
+
+    <div id="servir-contenido-verificar-certificado"                    class="step" data-x="-2000" data-y="4000" data-z="800">
+        <h2 class="breadcrumb">Servir contenido</h2>
+        <h3>4. Verificar validez certificado</h3>
+        <p>
+            <a href="https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol" target="_blank">OCSP (Online Certificate Status Protocol)</a>
+        </p>
+        <p><img class="ico-alert" src="images/alert.svg" alt="alert" width="80"> Una <strong>conexion adicional</strong></p>
+    </div>
+    <div id="servir-contenido-verificar-certificado-clave-Stapling"     class="step" data-x="-3200" data-y="4000" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Verificar validez certificado</h2>
+        <h3>Las claves:</h3>
+        <p>
+            OCSP <strong>Stapling</strong> <br>
+            <small><a href="https://decoder.link/sslchecker">Aquí se puede validar https://decoder.link/sslchecker</a></small>
+        </p>
+    </div>
+    <div id="servir-contenido-verificar-certificado-clave-Stapling-validador"   class="step" data-x="-4600" data-y="4000" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Verificar validez certificado</h2>
+        <h3>Validar soporte Stapling</h3>
+        <p>
+            <small><a href="https://decoder.link/sslchecker">Aquí se puede validar https://decoder.link/sslchecker</a></small>
+            <img src="images/staple-verification.png" width="801" height="251">
+        </p>
+    </div>
+
+
+    <div id="servir-contenido-obtener-datos"                            class="step" data-x="-2000" data-y="5000" data-z="800">
+        <h2 class="breadcrumb">Servir contenido</h2>
+        <h3>5. Obtener datos (servidor)</h3>
+        <p>
+            Acceso a archivos<br>
+            Consultas Dase de Datos<br>
+            Proceso página<br>
+        </p>
+    </div>
+    <div id="servir-contenido-obtener-datos-reflexion"                  class="step" data-x="-3200" data-y="5000" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Obtener datos</h2>
+        <h3>Tratamiento sobrepeso</h3>
+        <ul>
+            <li>Plugins: los mínimos imprescindibles.</li>
+            <li>Cortafuegos de aplicación: fuera de WP.</li>
+            <li>Optimizar base de datos.</li>
+            <li>Optimizar imágenes: peso y dimensiones.</li>
+            <li>Temas simples/modulares: evitar los "todo en uno".</li>
+        </ul>
+    </div>
+    <div id="servir-contenido-obtener-datos-medir-ttfb"                 class="step" data-x="-3200" data-y="5600" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Obtener datos</h2>
+        <h3>Como medir hosting:</h3>
+        <p>
+            <strong>TTFB</strong>
+        </p>
+    </div>
+    <div id="servir-contenido-obtener-datos-medir-ttfb-como"            class="step" data-x="-4600" data-y="5600" data-z="800">
+        <img src="images/medir_TTFB.png" width="1321" height="853" style="margin:-100px 0 0 -300px;">
+    </div>
+    <div id="servir-contenido-obtener-datos-nginx"                      class="step" data-x="-3200" data-y="6600" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Obtener datos</h2>
+        <h3>Las claves</h3>
+        <p>Un webserver liviano: <strong>nginx</strong></p>
+    </div>
+    <div id="servir-contenido-obtener-datos-server-ranking"             class="step" data-x="-4600" data-y="6600" data-z="800">
+        <img src="images/server-ranking.png" width="529" height="476">
+    </div>
+    <div id="servir-contenido-obtener-datos-nginx-vs-apache"            class="step" data-x="-4600" data-y="7200" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Obtener datos → nginx</h2>
+        <h4>No es tan diferente</h4>
+        <pre><code>
+    Apache                                 Nginx
+    ------                                 ------
+
+    &lt;VirtualHost *:80&gt;                       server {
+                                                 listen 80;
+        ServerName yoursite.com
+        ServerAlias www.yoursite.com             server_name yoursite.com www.yoursite.com;
+
+        DocumentRoot /path/to/root               root /path/to/root;
+
+        AllowOverride All                        IMPOSIBLE !!!!!
+
+        DirectoryIndex index.php                 index index.php;
+
+        CustomLog /path/to/log combined          access_log /path/to/log main;
+        ErrorLog /path/to/log                    error_log /path/to/log error;
+
+        Alias /url/ "/path/to/files"             location /url/ {
+        &lt;Directory "/path/to/files"&gt;                   alias /path/to/files;
+        ...                                      ...
+        ..                                       ..
+        .                                        .
+    &lt;/VirtualHost *:80&gt;                    }
+        </code></pre>
+    </div>
+    <div id="servir-contenido-obtener-datos-nginx-location-order"       class="step" data-x="-4600" data-y="8000" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Obtener datos → nginx</h2>
+        <h4>las prioridades</h4>
+        <pre><code>
+    location =   /blog              [1][exact match]
+
+    location ^~  /blog/Novedades    [2][regex priority + case sensitive + el mas especifico gana]
+    location ^~  /blog/Novedades/si [2][regex priority + case sensitive + el mas especifico gana]
+
+    location ~   /blog/NoVeDaDes    [3][regex case sensitive + el 1º gana]
+    location ~*  /blog/novedades    [3][regex case insensitive + el 1º gana]
+
+    location     /                  [4][empieza por + el mas especifico gana]
+    location     /blog
+        </code></pre>
+        <p><small><a href="https://fisharebest.stonystratford.org/116/understanding-nginx-location-rules/" target="_blank">
+            fisharebest.stonystratford.org
+        </a><br>
+            (breve y bien explicado)</small> </p>
+
+    </div>
+    <div id="servir-contenido-obtener-datos-nginx-location-order-help"  class="step" data-x="-5500" data-y="8000" data-z="800" data-rotate-y="45">
+        <h2 class="breadcrumb">Servir contenido → Obtener datos → nginx</h2>
+        <h4>Ayuda con los locations </h4>
+        <p><a href="https://nginx.viraptor.info/" target="_blank">
+            <img src="images/nginx-location-tester.png" width="600" ><br>
+            nginx.viraptor.info</a></p>
+    </div>
+    <div id="servir-contenido-obtener-datos-nginx-wp-config"            class="step" data-x="-4600" data-y="8800" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Obtener datos → nginx</h2>
+        <h4>Ejemplo WordPress</h4>
+        <pre><code>
+
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+
+    location ~* \.php$ {
+        try_files $uri = 404;
+        fastcgi_pass  unix:php-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_index index.php;
+        include fastcgi_params;
+    }
+
+
+    location ~* \.(?:atom|bmp|bz2|css|doc|eot|exe|gif|etc.)$ {
+        expires max;
+    }
+
+
+
+        </code></pre>
+    </div>
+    <div id="servir-contenido-obtener-datos-nginx-location-cgi_params"  class="step" data-x="-5500" data-y="8800" data-z="800" data-rotate-y="45">
+        <h2 class="breadcrumb">Servir contenido → Obtener datos → nginx</h2>
+        <h4>Los fastcgi params</h4>
+        <pre><code>
+
+    bash-4.4# cat /etc/nginx/fastcgi_params
+
+    fastcgi_param  QUERY_STRING       $query_string;
+    fastcgi_param  REQUEST_METHOD     $request_method;
+    fastcgi_param  CONTENT_TYPE       $content_type;
+
+    fastcgi_param  SCRIPT_NAME        $fastcgi_script_name;
+    fastcgi_param  REQUEST_URI        $request_uri;
+    fastcgi_param  DOCUMENT_URI       $document_uri;
+    fastcgi_param  DOCUMENT_ROOT      $document_root;
+    fastcgi_param  SERVER_PROTOCOL    $server_protocol;
+    fastcgi_param  REQUEST_SCHEME     $scheme;
+    fastcgi_param  HTTPS              $https if_not_empty;
+
+    fastcgi_param  SERVER_PORT        $server_port;
+    fastcgi_param  SERVER_NAME        $server_name;
+    ...
+        </code></pre>
+    </div>
+
+
+    <div id="servir-contenido-enviar-datos"                             class="step" data-x="-2000" data-y="8000" data-z="800">
+        <h2 class="breadcrumb">Servir contenido</h2>
+        <h3>6. Enviar datos (servidor)</h3>
+    </div>
+    <div id="servir-contenido-enviar-datos-clave"                       class="step" data-x="-2000" data-y="8800" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Enviar datos</h2>
+        <h3>Las claves:</h3>
+        <ul>
+            <li>Enviar los datos comprimidos: gzip, brotli</li>
+            <li>Sin olvidarnos de los: cache-control: max-age=300000 ...</li>
+        </ul>
+    </div>
+    <div id="servir-contenido-enviar-datos-clave-compresion-como"       class="step" data-x="-3200" data-y="8800" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Enviar datos → comprimidos</h2>
+        <img src="images/content-encoding.png" width="741" height="602">
+    </div>
+
+<!--
+    <div id="pintar-contenido" class="step" data-x="0" data-y="-700" data-z="0">
+        <h2>Pintar contenido</h2>
+        <p>frontend (browser)</p>
+    </div>
+-->
+
+
+
+    <div id="end" class="step" data-x="-500" data-y="6250" data-z="000" data-scale="1">
+
+        <h2>Eskerrik asko</h2>
+
+        <p><strong>JOAN VEGA</strong>
+        </p>
+        <p>joan@wetopi.com</p>
+
+        <p>@sitamet</p>
+        <p>linkedin.com/in/joanvega/</p>
+
+
+        <p><strong>Download:</strong>
+            <small><a href="https://github.com/sitamet/claves-para-servir-wordpress-rapido">github.com/sitamet/claves-para-servir-wordpress-rapido</a></small>
+        </p>
+
+    </div>
+
+
+    <div id="overview" class="step" data-x="-1200" data-y="3000" data-z="0" data-scale="8"></div>
+
+
+
+
+</div>
+
+<!--
+    This is a UI plugin. You can read more about plugins in src/plugins/README.md.
+    For now, I'll just tell you that this adds some graphical controls to navigate the
+    presentation. In the CSS file you can style them as you want. We've put them bottom right.
+-->
+<div id="impress-toolbar"></div>
+
+
+<!--
+
+    Last, but not least.
+
+    To make all described above really work, you need to include impress.js in the page.
+    I strongly encourage to minify it first.
+
+    In here I just include full source of the script to make it more readable.
+
+    You also need to call a `impress().init()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. Not only because it's a good practice, but also
+    because it should be done when the whole document is ready.
+    Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
+
+-->
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+</body>
+</html>
