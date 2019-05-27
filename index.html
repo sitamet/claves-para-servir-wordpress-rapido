@@ -197,10 +197,10 @@
         <h2 class="breadcrumb">Servir contenido → Descubrir servidor → un DNS anycast</h2>
         <h3>Recomendables:</h3>
         <p>
-            <a href="https://cloudflare.com">Cloudflare</a> (free) 36%<br>
+            <a href="https://cloudflare.com">Cloudflare</a> (free)<br>
             <a href="https://dnsmadeeasy.com/">Dnsmadeeasy</a> (~3$/a)<br>
             <a href="https://www.mrdomain.com/products/services/dns-anycast/">Dondominio</a> (free*)<br>
-            <a href="https://aws.amazon.com/es/route53/">AWS Route53</a> (>1$/m) 30%<br>
+            <a href="https://aws.amazon.com/es/route53/">AWS Route53</a> (>1$/m)<br>
         </p>
     </div>
     <div id="servir-contenido-descubrir-servidor-clave-dns-prefetch"    class="step" data-x="-3000" data-y="300" data-z="800">
@@ -467,6 +467,32 @@
         </code></pre>
     </div>
 
+    <div id="servir-contenido-obtener-datos-cache"                      class="step" data-x="2000" data-y="6600" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Obtener datos</h2>
+        <h3>Las claves</h3>
+        <p><strong>Cache</strong></p>
+        <p>2 reglas</p>
+    </div>
+
+    <div id="servir-contenido-obtener-datos-cache-expiry-time"          class="step" data-x="2800" data-y="6600" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Obtener datos → Cache</h2>
+        <h3>1. "Expiry Time" o caducidad <strong>elevada</strong></h3>
+        <p>
+            si contenido no cambia en lado server → ∞<br>
+        </p>
+    </div>
+    <div id="servir-contenido-obtener-datos-pruning"                    class="step" data-x="2800" data-y="7200" data-z="800">
+        <h2 class="breadcrumb">Servir contenido → Obtener datos → Cache</h2>
+        <h3>2. Limpieza "Garbage Collection"</h3>
+        <p>
+            Nunca lo dejes en manos de tu usuario<br>
+        </p>
+        <pre><code>
+        define('DISABLE_WP_CRON', true);
+        # ... y recuerda activarlo en servidor!
+        </code></pre>
+
+    </div>
 
     <div id="servir-contenido-enviar-datos"                             class="step" data-x="-2000" data-y="8000" data-z="800">
         <h2 class="breadcrumb">Servir contenido</h2>
@@ -491,8 +517,6 @@
         <p>frontend (browser)</p>
     </div>
 -->
-
-
 
     <div id="end" class="step" data-x="-500" data-y="6250" data-z="000" data-scale="1">
 
